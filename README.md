@@ -1,5 +1,5 @@
 # Data of Japan
-## Land
+## 行政区分
 
 * resions.csv
 
@@ -28,3 +28,14 @@ JIS X 0401として規定されているほか、ISO 3166-2にも番号は引き
 
 全国地方公共団体コードは平成26年4月5日現在の資料を参照しています。
 
+## 選挙区
+
+* singleSeatBlock.geojson、singleSeatBlock.topojson
+
+Data for Japanに掲載( http://dataforjapan.org/dataset/senkyoku300-shape )されているShapefileを変換し、GeoJSON、TopoJSONに変換したものです。また変換時に以下の変更を加えています。
+
+	- 変換時に文字コードをShift JISからUTF-8へ変換しました。
+	- UserID、タイトル、登録日、面積、周長を除くフィールドにはnull値しか入っていなかったためフィールドごと削除しました。
+	- フィールド名はプログラムコードから参照するため、日本語表記を英語表記へ改めました(タイトル→title、登録日→submitdate、面積(m2)→area、周長(m)→circumfere)
+
+使用ライセンスは配布元に準じ、Public Domainとします。
